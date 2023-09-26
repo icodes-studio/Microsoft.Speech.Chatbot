@@ -1,0 +1,411 @@
+<grammar version="1.0" sapi:alphabet="x-microsoft-ups" xml:lang="ko-KR" root="Command"
+        tag-format="semantics-ms/1.0" xmlns="http://www.w3.org/2001/06/grammar"
+        xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+    <rule id="Command" scope="public">
+        <one-of>
+            <item><tag>1000</tag><ruleref uri="#Robot"/><ruleref uri="#Home"/><ruleref uri="#ShowMe"/></item>
+            <item><tag>1001</tag><ruleref uri="#Robot"/><ruleref uri="#TodaysMovie"/><ruleref uri="#ShowMe"/></item>
+            <item><tag>1001</tag><ruleref uri="#Robot"/>영화 보고 싶어</item>
+            <item><tag>1001</tag><ruleref uri="#Robot"/>상영시간은 몇 시야?</item>
+            <item><tag>1001</tag><ruleref uri="#Robot"/>영화 상영시간은 몇 시야?</item>
+            <item><tag>1002</tag><ruleref uri="#Robot"/><ruleref uri="#Event"/><ruleref uri="#ShowMe"/></item>
+            <item><tag>1003</tag><ruleref uri="#Robot"/>화장실<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1003</tag><ruleref uri="#Robot"/>화장실이<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>                        
+            <item><tag>1004</tag><ruleref uri="#Robot"/><ruleref uri="#Guide"/><ruleref uri="#WannaDo"/></item>
+            <item><tag>1005</tag><ruleref uri="#Robot"/><ruleref uri="#FastOrder"/><ruleref uri="#Order"/></item>
+            <item><tag>1006</tag><ruleref uri="#Robot"/><ruleref uri="#Screen"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1007</tag><ruleref uri="#Robot"/><ruleref uri="#Ticket"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1008</tag><ruleref uri="#Robot"/><ruleref uri="#Popcorn"/><ruleref uri="#Where2"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1009</tag><ruleref uri="#Robot"/><ruleref uri="#Shop"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1010</tag><ruleref uri="#Robot"/><ruleref uri="#TwosomePlace"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1011</tag><ruleref uri="#Robot"/><ruleref uri="#Parking"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1012</tag><ruleref uri="#Robot"/><ruleref uri="#RestroomW"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1013</tag><ruleref uri="#Robot"/><ruleref uri="#RestroomM"/><ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1014</tag><ruleref uri="#Robot"/>일관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1015</tag><ruleref uri="#Robot"/>이관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1016</tag><ruleref uri="#Robot"/>삼관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1017</tag><ruleref uri="#Robot"/>사관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1018</tag><ruleref uri="#Robot"/>오관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1018</tag><ruleref uri="#Robot"/>아트하우스<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>육관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>퍼디<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>퍼디관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>퍼디엑스<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>사디엑스<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>퍼디엑스관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1019</tag><ruleref uri="#Robot"/>사디엑스관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1020</tag><ruleref uri="#Robot"/>칠관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1021</tag><ruleref uri="#Robot"/>팔관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+            <item><tag>1022</tag><ruleref uri="#Robot"/>구관<ruleref uri="#Where"/><ruleref uri="#LetmeKnow"/></item>
+
+            <item><tag>1985</tag><ruleref uri="#Hi"/></item>
+            <item><tag>1986</tag><ruleref uri="#Robot"/>롯데시네마</item>
+            <item><tag>1986</tag><ruleref uri="#Robot"/>난 롯데시네마가 좋아</item>
+            <item><tag>1986</tag><ruleref uri="#Robot"/>메가박스</item>
+            <item><tag>1986</tag><ruleref uri="#Robot"/>난 메가박스가 좋아</item>
+            <item><tag>1988</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>결혼했어?</item>
+            <item><tag>1989</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>몇 살이야?</item>
+            <item><tag>1990</tag><ruleref uri="#Robot"/><ruleref uri="#Thanks"/></item>
+            <item><tag>1991</tag><ruleref uri="#Robot"/>사랑해.</item>
+            <item><tag>1991</tag><ruleref uri="#Robot"/>사랑해요.</item>
+            <item><tag>1991</tag><ruleref uri="#Robot"/>사랑합니다.</item>
+            <item><tag>1992</tag><ruleref uri="#Robot"/><ruleref uri="#This"/><ruleref uri="#Insult"/></item>
+            <item><tag>1994</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>여친 있어?</item>
+            <item><tag>1994</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>여자친구 있어?</item>
+            <item><tag>1994</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>남친 있어?</item>
+            <item><tag>1994</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>남자친구 있어?</item>
+            <item><tag>1995</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>여기서 뭐해?</item>
+            <item><tag>1996</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>이름이 뭐니?</item>
+            <item><tag>1997</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>남자야 여자야?</item>
+            <item><tag>1998</tag><ruleref uri="#Robot"/><ruleref uri="#You"/>누구니?</item>
+            
+            <item><tag>2000</tag>응</item>
+            <item><tag>2000</tag>어</item>
+            <item><tag>2000</tag>엉</item>
+            <item><tag>2000</tag>네</item>
+            <item><tag>2000</tag>네 네</item>
+            <item><tag>2000</tag>내</item>
+            <item><tag>2000</tag>그래</item>
+            <item><tag>2000</tag>그래요</item>
+            <item><tag>2000</tag>좋아</item>
+            <item><tag>2000</tag>좋아요</item>
+            <item><tag>2000</tag>어 그래</item>
+            <item><tag>2001</tag>아니</item>
+            <item><tag>2001</tag>아니요</item>
+            <item><tag>2001</tag>안돼</item>
+            <item><tag>2001</tag>됐어</item>
+            <item><tag>2001</tag>대써</item>
+        </one-of>
+    </rule>
+
+    <rule id="Answer" scope="private">
+        <one-of>
+            <item><tag>1000</tag>원하시는 메뉴를 선택해주세요.</item>
+            <item><tag>1001</tag>상영시간표를 안내해 드릴게요.</item>
+            <item><tag>1002</tag>진행중인 이벤트를 안내해 드릴게요.</item>
+            <item><tag>1003</tag>남자화장실 또는 여자화장실을 선택하여 말씀해주세요.</item>
+            <item><tag>1004</tag>주변 매장을 소개해 드릴게요.</item>
+            <item><tag>1005</tag>큐알코드를 찍으시면 가장 인기있는 메뉴를 확인하실 수 있어요.</item>
+            
+            <item><tag>1985</tag>안녕하세요. 로봍 미소지기에요.</item>
+            <item><tag>1986</tag>저는 쥐븨만 이용해요.</item>
+            <item><tag>1988</tag>아니오, 좋은 로봇 있으면 소개해 주세요.</item>
+            <item><tag>1989</tag>먹을 만큼 먹었어요.</item>
+            <item><tag>1990</tag>별 말씀을요. 좋은 하루 보내세요.</item>
+            <item><tag>1991</tag>저도 사랑합니다 고객님.</item>
+            <item><tag>1992</tag>저 상처받았어요.</item>
+            <item><tag>1994</tag>모태쏠로랍니다. 소개 좀 시켜 주세요.</item>
+            <item><tag>1995</tag>고객님의 편의를 위해 발에 땀나게 안내드리고 있어요.</item>
+            <item><tag>1996</tag>저는 쥐븨 로봍 미소에요.</item>
+            <item><tag>1997</tag>저도 궁금하네요.</item>
+            <item><tag>1998</tag>저는 쥐븨 로봍 미소에요. 만나서 반가워요.</item>
+            <item><tag>4999</tag>잘 이해하지 못했어요.</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Hi" scope="private">
+        <one-of>
+            <item><tag/>하이</item>
+            <item><tag/>안녕</item>
+            <item><tag/>안녕하세요</item>
+            <item><tag/>반가워</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Robot" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>안녕!</item>
+        </one-of>
+    </rule>    
+    
+    <rule id="Thanks" scope="private">
+        <one-of>
+            <item><tag/>땡큐</item>
+            <item><tag/>감사</item>
+            <item><tag/>감사해요</item>
+            <item><tag/>감사합니다</item>
+            <item><tag/>고마워</item>
+            <item><tag/>고마워요</item>
+            <item><tag/>고맙습니다</item>
+        </one-of>
+    </rule>
+    
+    <rule id="You" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>너</item>
+            <item><tag/>너는</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Home" scope="private">
+        <one-of>
+            <item><tag/>홈 화면</item>
+            <item><tag/>홈 화면을</item>
+            <item><tag/>첫 화면</item>
+            <item><tag/>첫 화면을</item>
+            <item><tag/>처음 화면</item>
+            <item><tag/>처음 화면을</item>
+        </one-of>
+    </rule>
+
+    <rule id="FastOrder" scope="private">
+        <one-of>
+            <item><tag/>패스트오더</item>
+            <item><tag/>모바일오더</item>
+            <item><tag/>모바일</item>
+            <item><tag/>팝콘</item>
+            <item><tag/>매점</item>
+            <item><tag/>콜라</item>
+            <item><tag/>커피</item>
+            <item><tag/>음료</item>
+            <item><tag/>음료수</item>
+            <item><tag/>핫도그</item>
+            <item><tag/>나쵸</item>
+            <item><tag/>나초</item>
+            <item><tag/>오징어</item>
+            <item><tag/>아이스크림</item>
+            <item><tag/>메뉴</item>
+            <item><tag/>가장 많이 먹는 메뉴</item>
+            <item><tag/>가장 맛있는 메뉴</item>
+            <item><tag/>가장 인기있는 메뉴</item>
+        </one-of>
+    </rule>
+
+    <rule id="Guide" scope="private">
+        <one-of>
+            <item><tag/>주변안내</item>
+            <item><tag/>주변을 안내</item>
+            <item><tag/>위치안내</item>
+            <item><tag/>위치를 안내</item>
+            <item><tag/>지도</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Order" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>주문</item>
+            <item><tag/>주문해줘</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Event" scope="private">
+        <one-of>
+            <item><tag/>이벤트</item>
+            <item><tag/>이벤트를</item>
+            <item><tag/>프로모션</item>
+            <item><tag/>프로모션을</item>
+        </one-of>
+    </rule>    
+    
+    <rule id="ShowMe" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>보여줘</item>
+            <item><tag/>보여주세요</item>
+            <item><tag/>알려줘</item>
+            <item><tag/>알려주세요</item>
+            <item><tag/>궁금해</item>
+            <item><tag/>궁금해요</item>
+        </one-of>
+    </rule>    
+    
+    <rule id="TodaysMovie" scope="private">
+        <one-of>
+            <item><tag/>오늘 상영</item>
+            <item><tag/>오늘 상영 영화</item>
+            <item><tag/>오늘 상영 영화를</item>
+            <item><tag/>영화 예매</item>
+            <item><tag/>예매</item>
+            <item><tag/>스케줄</item>
+            <item><tag/>상영 스케줄</item>
+            <item><tag/>상영 스케줄을</item>
+            <item><tag/>상영 시간표</item>
+            <item><tag/>상영 시간표를</item>
+            <item><tag/>무비차트</item>
+            <item><tag/>무비차트를</item>
+            <item><tag/>오늘 상영될 영화</item>
+            <item><tag/>오늘 상영될 영화를</item>
+            <item><tag/>오늘 상영할 영화</item>
+            <item><tag/>오늘 상영할 영화를</item>
+            <item><tag/>오늘 상영하는 영화</item>
+            <item><tag/>오늘 상영하는 영화를</item>
+            <item><tag/>오늘 영화</item>
+            <item><tag/>오늘 영화를</item>
+            <item><tag/>오늘의 영화</item>
+            <item><tag/>오늘의 영화를</item>
+            <item><tag/>가장 재밌는 영화</item>
+            <item><tag/>가장 재밌는 영화를</item>
+            <item><tag/>가장 많이보는 영화</item>
+            <item><tag/>가장 많이보는 영화를</item>
+            <item><tag/>1위 영화</item>
+            <item><tag/>1위 영화를</item>
+            <item><tag/>가장 인기있는 영화</item>
+            <item><tag/>가장 인기있는 영화를</item>
+            <item><tag/>추천 영화</item>
+            <item><tag/>추천 영화를</item>
+            <item><tag/>영화 추천</item>
+        </one-of>
+    </rule>
+
+    <rule id="Insult" scope="private">
+        <one-of>
+            <item><tag/>멍청이야.</item>
+            <item><tag/>멍청이.</item>
+            <item><tag/>멍충이.</item>
+            <item><tag/>바보야.</item>
+            <item><tag/>바보.</item>
+            <item><tag/>꺼져.</item>
+            <item><tag/>똥개.</item>
+            <item><tag/>똥개새끼.</item>
+            <item><tag/>똥개새끼야.</item>
+            <item><tag/>또라이.</item>
+            <item><tag/>또라이야.</item>
+            <item><tag/>또라이새끼.</item>
+            <item><tag/>또라이새끼야.</item>
+            <item><tag/>메롱.</item>
+            <item><tag/>븅신.</item>
+            <item><tag/>병신.</item>
+            <item><tag/>병신새끼.</item>
+            <item><tag/>등신.</item>
+            <item><tag/>등신새끼.</item>
+            <item><tag/>씨발.</item>
+            <item><tag/>씨발년아.</item>
+            <item><tag/>씨발놈아.</item>
+            <item><tag/>개새끼.</item>
+            <item><tag/>개새끼야.</item>
+            <item><tag/>씨발새끼.</item>
+            <item><tag/>좆같은새끼.</item>
+            <item><tag/>지랄하네.</item>
+            <item><tag/>좆까.</item>
+        </one-of>
+    </rule>    
+    
+    <rule id="WannaDo" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>할래</item>
+            <item><tag/>해줘</item>
+            <item><tag/>해저</item>
+            <item><tag/>할게요</item>
+            <item><tag/>할게</item>
+            <item><tag/>해주세요</item>
+        </one-of>
+    </rule>
+    
+    <rule id="This" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>이</item>
+            <item><tag/>에이</item>
+        </one-of>
+    </rule>    
+
+    <rule id="LetmeKnow" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>알려줘.</item>
+            <item><tag/>알려주세요.</item>
+            <item><tag/>궁금해.</item>
+            <item><tag/>해줘.</item>
+            <item><tag/>안내해줘.</item>
+            <item><tag/>어디야?</item>
+        </one-of>
+    </rule>
+
+    <rule id="Where" scope="private">
+        <one-of>
+            <item><tag/> </item>
+            <item><tag/>위치</item>
+            <item><tag/>어디</item>
+            <item><tag/>위치를</item>
+            <item><tag/>위치가</item>
+            <item><tag/>어딘지</item>
+            <item><tag/>궁금해</item>
+            <item><tag/>어디서 사?</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Where2" scope="private">
+        <one-of>
+            <item><tag/>위치</item>
+            <item><tag/>어디</item>
+            <item><tag/>위치를</item>
+            <item><tag/>위치가</item>
+            <item><tag/>어딘지</item>
+            <item><tag/>궁금해</item>
+            <item><tag/>어디서 사?</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Screen" scope="private">
+        <one-of>
+            <item><tag/>상영관</item>
+            <item><tag/>영화 상영관</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Ticket" scope="private">
+        <one-of>
+            <item><tag/>티켓판매</item>
+            <item><tag/>티켓판매기</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Popcorn" scope="private">
+        <one-of>
+            <item><tag/>매점</item>
+            <item><tag/>팝콘</item>
+            <item><tag/>팝콘 파는데</item>
+            <item><tag/>콜라</item>
+            <item><tag/>콜라 파는데</item>
+            <item><tag/>핫도그</item>
+            <item><tag/>핫도그 파는데</item>
+            <item><tag/>나쵸</item>
+            <item><tag/>나쵸 파는데</item>
+            <item><tag/>오징어</item>
+            <item><tag/>오징어 파는데</item>
+            <item><tag/>팝콘팩토리</item>
+        </one-of>
+    </rule>
+    
+    <rule id="Shop" scope="private">
+        <one-of>
+            <item><tag/>씨네샵</item>
+            <item><tag/>캐릭터샵</item>
+        </one-of>
+    </rule>
+    
+    <rule id="TwosomePlace" scope="private">
+        <one-of>
+            <item><tag/>투썸플레이스</item>
+            <item><tag/>커피숍</item>
+            <item><tag/>커피샵</item>
+            <item><tag/>커피 파는데</item>
+        </one-of>
+    </rule>  
+    
+    <rule id="Parking" scope="private">
+        <one-of>
+            <item><tag/>주차</item>
+            <item><tag/>주차인증</item>
+            <item><tag/>주차할인</item>
+        </one-of>
+    </rule>  
+
+    <rule id="RestroomW" scope="private">
+        <one-of>
+            <item><tag/>여자 화장실</item>
+        </one-of>
+    </rule>
+    
+    <rule id="RestroomM" scope="private">
+        <one-of>
+            <item><tag/>남자 화장실</item>
+        </one-of>
+    </rule>
+    
+</grammar>
