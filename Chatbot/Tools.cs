@@ -1,9 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Xml;
 using System.Net;
 using System.Text;
-using System.Globalization;
 using System.Collections.Generic;
 
 namespace Chatbot
@@ -22,28 +20,28 @@ namespace Chatbot
             }
         }
 
-        public static XmlNode FindXmlNode(XmlNode root, string[] path, int depth = 0)
+        private static XmlNode FindXmlNode(XmlNode root, string[] path, int depth)
         {
             if (depth >= path.Length)
                 return root;
 
             foreach (XmlNode node in root)
             {
-                if (path[depth] == node.Name)
+                if (string.Equals(path[depth], node.Name, StringComparison.OrdinalIgnoreCase))
                     return FindXmlNode(node, path, depth + 1);
             }
 
             return null;
         }
 
-        public static List<XmlNode> FindXmlNodes(XmlNode root, string[] path, int depth = 0)
+        private static List<XmlNode> FindXmlNodes(XmlNode root, string[] path, int depth)
         {
             if (depth == path.Length - 1)
             {
                 var result = new List<XmlNode>();
                 foreach (XmlNode node in root)
                 {
-                    if (path[depth] == node.Name)
+                    if (string.Equals(path[depth], node.Name, StringComparison.OrdinalIgnoreCase))
                         result.Add(node);
                 }
                 return result;
@@ -52,16 +50,20 @@ namespace Chatbot
             {
                 foreach (XmlNode node in root)
                 {
-                    if (path[depth] == node.Name)
+                    if (string.Equals(path[depth], node.Name, StringComparison.OrdinalIgnoreCase))
                         return FindXmlNodes(node, path, depth + 1);
                 }
             }
             return null;
         }
 
-        public static string FullPath(string path)
-        {
-            return AppDomain.CurrentDomain.BaseDirectory + path;
-        }
+        public static XmlNode FindXmlNode(XmlNode root, string path) =>
+            FindXmlNode(root, path.Split('/'), 0);
+
+        public static List<XmlNode> FindXmlNodes(XmlNode root, string path) =>
+            FindXmlNodes(root, path.Split('/'), 0);
+
+        public static string FullPath(string path) =>
+            AppDomain.CurrentDomain.BaseDirectory + path;
     }
 }
