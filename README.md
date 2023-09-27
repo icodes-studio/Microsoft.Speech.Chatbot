@@ -10,6 +10,7 @@ A ChatBot using Microsoft Speech Platform
     - **Developed & tested with**
         - Visual Studio 2022
         - .NET Framework 4.8
+        - C# 8.0
 
 - **SDK**
     - **Microsoft Speech Platform - Runtime 11.0**
