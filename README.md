@@ -12,6 +12,9 @@ A ChatBot using Microsoft Speech Platform
         - .NET Framework 4.8
         - C# 8.0
 
+
+　
+
 - **First of all, you need to install the following SDKs**
     - **Microsoft Speech Platform - Runtime 11.0**
         - *http://go.microsoft.com/fwlink/?LinkID=223568&clcid=0x409*
@@ -21,6 +24,9 @@ A ChatBot using Microsoft Speech Platform
         - *http://www.microsoft.com/download/en/details.aspx?id=27224*
             - STT: MSSpeech_SR_ko-KR_TELE.msi
             - TTS: MSSpeech_TTS_ko-KR_Heami.msi
+
+
+　
 
 - **References**
     - *https://youtu.be/culBDFq7rHs*
