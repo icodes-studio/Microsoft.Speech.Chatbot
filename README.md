@@ -22,8 +22,8 @@ A ChatBot using Microsoft Speech Platform
         - *http://go.microsoft.com/fwlink/?LinkID=223570&clcid=0x409*
     - ***Microsoft Speech Platform - Runtime Languages (Version 11)***
         - *http://www.microsoft.com/download/en/details.aspx?id=27224*
-            - STT: MSSpeech_SR_ko-KR_TELE.msi
-            - TTS: MSSpeech_TTS_ko-KR_Heami.msi
+            - *STT: MSSpeech_SR_ko-KR_TELE.msi*
+            - *TTS: MSSpeech_TTS_ko-KR_Heami.msi*
     - ***All SDKs that need to be installed have been prepared in the following***
         - *https://github.com/icodes-studio/Microsoft.Speech.Chatbot/tree/main/SDK*
 
