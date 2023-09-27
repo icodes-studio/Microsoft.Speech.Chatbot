@@ -6,7 +6,7 @@ A ChatBot using Microsoft Speech Platform
 
 ## # Environment
 
-- **ChatBot**
+- **Chatbot**
     - **Developed & tested with**
         - Visual Studio 2022
         - .NET Framework 4.8
@@ -15,7 +15,7 @@ A ChatBot using Microsoft Speech Platform
 
 　
 
-- **First of all, you need to install the following SDKs**
+- **Install the following SDKs**
     - **Microsoft Speech Platform - Runtime 11.0**
         - *http://go.microsoft.com/fwlink/?LinkID=223568&clcid=0x409*
     - **Microsoft Speech Platform - Server SDK**
@@ -24,6 +24,8 @@ A ChatBot using Microsoft Speech Platform
         - *http://www.microsoft.com/download/en/details.aspx?id=27224*
             - STT: MSSpeech_SR_ko-KR_TELE.msi
             - TTS: MSSpeech_TTS_ko-KR_Heami.msi
+    - **All SDKs that need to be installed have been prepared in the following**
+        - *https://github.com/icodes-studio/Microsoft.Speech.Chatbot/tree/main/SDK*
 
 
 　
