@@ -31,12 +31,14 @@ A ChatBot using Microsoft Speech Platform
 　
 
 - **References**
-    - *https://youtu.be/culBDFq7rHs*
     - *https://youtu.be/EgfsGUbhH54*
+    - *https://youtu.be/culBDFq7rHs*
     - *https://www.sysnet.pe.kr/2/0/1228*
     - *https://www.sysnet.pe.kr/2/0/1449*
     - *https://www.sysnet.pe.kr/2/0/1317*
     - *https://www.sysnet.pe.kr/2/0/11412*
+    - *https://www.codeproject.com/Articles/483347/Speech-recognition-speech-to-text-text-to-speech-a*
+    - *https://learn.microsoft.com/en-us/dotnet/api/system.speech.recognition.speechrecognitionengine?view=netframework-4.8.1*
     - *https://learn.microsoft.com/en-us/dotnet/api/system.speech.recognition.grammar?view=netframework-4.8.1*
     - *https://www.w3.org/TR/speech-grammar/*
     
