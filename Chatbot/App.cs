@@ -143,9 +143,9 @@ namespace Chatbot
                     }
                 }
             }
-            catch (Exception exception)
+            catch
             {
-                Log.Error(exception.ToString());
+                // N/A
             }
         }
 
@@ -167,10 +167,8 @@ namespace Chatbot
 
                 synthesizer.SpeakCompleted += (sender, args) =>
                 {
-                    Task.Delay(1000).ContinueWith(t =>
-                    {
-                        speaking = false;
-                    });
+                    Console.Beep();
+                    Task.Delay(1000).ContinueWith(t => speaking = false);
                 };
 
                 // NOTE: 아래 방식으로 하면 소리 출력이 안되는 경우가 있다.
