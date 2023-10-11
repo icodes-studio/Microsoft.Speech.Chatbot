@@ -19,9 +19,9 @@
             <item><tag>1008</tag><ruleref uri="#you"/>이름이 뭐니?</item>
             <item><tag>1009</tag><ruleref uri="#you"/>남자야 여자야?</item>
 
-            <item><tag>power</tag><ruleref uri="#power"/></item>
-            <item><tag>notepad</tag><ruleref uri="#notepad"/><ruleref uri="#open"/></item>
-            <item><tag>explorer</tag><ruleref uri="#explorer"/><ruleref uri="#open"/></item>
+            <item><tag>CommandPower</tag><ruleref uri="#CommandPower"/></item>
+            <item><tag>CommandNotepad</tag><ruleref uri="#CommandNotepad"/><ruleref uri="#open"/></item>
+            <item><tag>CommandExplorer</tag><ruleref uri="#CommandExplorer"/><ruleref uri="#open"/></item>
 
             <item><tag>yes</tag>응</item>
             <item><tag>yes</tag>어</item>
@@ -123,7 +123,7 @@
         </one-of>
     </rule>
 
-    <rule id="power" scope="private">
+    <rule id="CommandPower" scope="private">
         <one-of>
             <item>절전모드</item>
             <item>절전모드로 들어가</item>
@@ -133,14 +133,14 @@
         </one-of>
     </rule>
 
-    <rule id="notepad" scope="private">
+    <rule id="CommandNotepad" scope="private">
         <one-of>
             <item>메모장</item>
             <item>노트패드</item>
         </one-of>
     </rule>
 
-    <rule id="explorer" scope="private">
+    <rule id="CommandExplorer" scope="private">
         <one-of>
             <item>탐색기</item>
             <item>파일 탐색기</item>

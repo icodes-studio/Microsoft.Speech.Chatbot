@@ -17,7 +17,7 @@ namespace Chatbot
         private Dictionary<string, string> commands = new Dictionary<string, string>();
         private Dictionary<string, string> answers = new Dictionary<string, string>();
         private bool speaking = false;
-        private ICommander commander = null;
+        private ICommand commander = null;
 
         protected override void Awake()
         {
@@ -33,7 +33,7 @@ namespace Chatbot
                 (level, message) => Debug.WriteLine(message));
         }
 
-        public bool Start()
+        private bool Start()
         {
             try
             {
@@ -129,7 +129,7 @@ namespace Chatbot
 
                 if (commander != null)
                 {
-                    commander = commander.Command(command);
+                    commander = commander.Work(command);
                 }
                 else
                 {
@@ -139,13 +139,7 @@ namespace Chatbot
                     }
                     else
                     {
-                        commander = command switch
-                        {
-                            "power"     => new CommanderPower().Command(command),
-                            "notepad"   => new CommanderNotepad().Command(command),
-                            "explorer"  => new CommanderExplorer().Command(command),
-                            _           => null
-                        };
+                        commander = (Activator.CreateInstance(Type.GetType("Chatbot." + command)) as ICommand)?.Work();
                     }
                 }
             }
@@ -162,26 +156,24 @@ namespace Chatbot
                 if (string.IsNullOrEmpty(message))
                     return;
 
-                if (synthesizer != null)
-                    synthesizer.Dispose();
-
                 speaking = true;
+
+                synthesizer?.Dispose();
                 synthesizer = new SpeechSynthesizer();
                 synthesizer.Rate = int.Parse(ConfigurationManager.AppSettings["SpeechRate"]);
                 synthesizer.SelectVoice("Microsoft Server Speech Text to Speech Voice (ko-KR, Heami)");
                 synthesizer.SetOutputToDefaultAudioDevice();
                 synthesizer.SpeakAsync(message.Replace("\n", " "));
+
                 synthesizer.SpeakCompleted += (sender, args) =>
                 {
-                    // TODO: RecognizeAsyncStop 시키고 다시 Start 하는 방식으로 고민해보자.
-
                     Task.Delay(1000).ContinueWith(t =>
                     {
                         speaking = false;
                     });
                 };
 
-                // NOTE: 아래 방식으로 하면 소리가 가끔 출력이 안되는 경우가 있다.
+                // NOTE: 아래 방식으로 하면 소리 출력이 안되는 경우가 있다.
                 // synthesizer.SpeakAsyncCancelAll();
                 // synthesizer.SpeakAsync(message);
             }
@@ -192,19 +184,10 @@ namespace Chatbot
             }
         }
 
-        public void Stop()
+        private void Stop()
         {
-            if (synthesizer != null)
-            {
-                synthesizer.Dispose();
-                synthesizer = null;
-            }
-
-            if (recognizer != null)
-            {
-                recognizer.Dispose();
-                recognizer = null;
-            }
+            synthesizer?.Dispose();
+            recognizer?.Dispose();
         }
 
         private void SetupCommands()
