@@ -8,9 +8,9 @@
 
 - **Chatbot**
     - **Developed & tested with**
-        - Visual Studio 2022
-        - .NET Framework 4.8
-        - C# 8.0
+        - *Visual Studio 2022*
+        - *.NET Framework 4.8*
+        - *C# 8.0*
 
 
 ## # Release note
